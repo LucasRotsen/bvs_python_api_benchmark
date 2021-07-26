@@ -2,7 +2,10 @@
 .idea/
 
 # Virtual Environments
-.env/
+.venv
+
+# dotENV file
+.env
 
 # Python Cache
 __pycache__/
