@@ -21,3 +21,8 @@ def create_dog(db: Session, dog: schemas.DogCreate):
     db.commit()
     db.refresh(db_dog)
     return db_dog
+
+
+def delete_dog(db: Session, dog_id: int):
+    db_dog = db.query(models.Dog).filter(models.Dog.id == dog_id).first()
+    return db_dog

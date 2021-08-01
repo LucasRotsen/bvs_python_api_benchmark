@@ -52,5 +52,11 @@ def read_dog(dog_id: int, db: Session = Depends(get_db)):
     return db_dog
 
 
+@app.delete("/dogs/")
+def delete_dog(dog_id: int, db: Session = Depends(get_db)):
+    db_dog = dogs.delete_dog(db, dog_id=dog_id)
+    return db_dog
+
+
 if __name__ == '__main__':
     uvicorn.run(app, host='0.0.0.0', port=8000)
